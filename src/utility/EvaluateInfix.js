@@ -1,5 +1,8 @@
-export const evaluate = (expression) => {
+ export const evaluate = (expr) => {
+  if(expr===undefined) return "Error"
+    let expression=expr.toString();
     const tokens = expression.split('');
+    console.log(tokens);
     const values = [];
     const ops = [];
   
@@ -17,12 +20,13 @@ export const evaluate = (expression) => {
         continue;
       }
   
-      if (/^[0-9]+$/.test(tokens[i])) {
+      if (/^[0-9]+$/.test(tokens[i]) || tokens[i]==='.') {
         let numStr = '';
-        while (i < tokens.length && /^[0-9]+$/.test(tokens[i])) {
+        while (i < tokens.length && (/^[0-9]+$/.test(tokens[i]) || tokens[i]==='.')) {
           numStr += tokens[i++];
         }
-        values.push(parseInt(numStr, 10));
+        console.log(numStr);
+        values.push(parseFloat(numStr, 10));
         i--; // Correct the offset
       } else if (tokens[i] === '(') {
         ops.push(tokens[i]);
@@ -45,7 +49,6 @@ export const evaluate = (expression) => {
     while (ops.length !== 0) {
       values.push(applyOp(ops.pop(), values.pop(), values.pop()));
     }
-  
     return values.pop();
   };
   
@@ -71,7 +74,4 @@ export const evaluate = (expression) => {
   
     return 0;
   }
-  
-
-  
-  
+ 

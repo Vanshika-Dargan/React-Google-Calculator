@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; 
+    height: 90vh; 
   }
   
   #calc-container {
@@ -15,10 +15,12 @@
   }
   
   #calc-head {
+    width:100%;
     margin: 10px;
   }
   
   #calc-body {
+    width:100%;
     margin: 10px;
   }
   

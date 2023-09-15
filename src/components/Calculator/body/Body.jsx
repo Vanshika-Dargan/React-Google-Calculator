@@ -6,7 +6,7 @@ import { Grid } from '@mui/material';
 import "./Body.css";
 
 export const Body = ({ clickedValue, setClickedValue, ans, setAns, setExpr, expr, setDisplay }) => {
-  const buttonValues = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '%', '(', ')'];
+  const buttonValues = ['(', ')','%','AC','7', '8', '9','/','4', '5', '6','*', '1', '2', '3', '-','0','.','=','+'];
   const buttonOpr = ['='];
   const [type, setType] = useState('+');
   const [isXSet, setIsXSet] = useState(false);
@@ -33,21 +33,12 @@ export const Body = ({ clickedValue, setClickedValue, ans, setAns, setExpr, expr
                   setClickedValue={setClickedValue}
                   setExpr={setExpr}
                   expr={expr}
+                  setDisplay={setDisplay}
                 />
               </Grid>
             ))}
           </Grid>
         ))}
-        <Grid item xs={12}>
-          <Equal
-            type={type}
-            setClickedValue={setClickedValue}
-            clickedValue={clickedValue}
-            setExpr={setExpr}
-            expr={expr}
-            setDisplay={setDisplay}
-          />
-        </Grid>
       </Grid>
       </div>
   );

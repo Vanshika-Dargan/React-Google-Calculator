@@ -1,7 +1,8 @@
-export const Display=({display})=>{
-    return(
-        <div>
-           {display}
-        </div>
-    )
-}
+export const Display = ({ display }) => {
+    return (
+      <div >
+        {display}
+      </div>
+    );
+  };
+  
