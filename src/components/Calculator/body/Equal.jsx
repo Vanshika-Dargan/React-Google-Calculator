@@ -1,32 +1,46 @@
 import { Button } from "@mui/material";
 import { myStyle } from "./ButtonStyles";
 import { useEffect } from "react";
-export const Equal=({type,setClickedValue,x,y,setY,clickedValue})=>{
+import { evaluate } from "../../../utility/EvaluateInfix";
+export const Equal=({type,setClickedValue,clickedValue,expr,setExpr,setDisplay})=>{
     const handleButtonClick=()=>{
-        setY((prevY)=>{
-            const newY=Number(clickedValue);
-            return newY;
-        })
-}
-useEffect(()=>{
-    switch(type){
-        case'+':
-        setClickedValue(x+y);
-        break;
-        case'-':
-        setClickedValue(x-y);
-        break;
-        case'*':
-        setClickedValue(x*y);
-        break;
-        case'/':
-        setClickedValue(x/y);
-        break;
-        case'%':
-        setClickedValue(x%y);
-        break;
+    let res=evaluate(expr);
+    setDisplay(expr+"=");
+    setExpr(res);
     }
-    },[y])
+//         setY((prevY)=>{
+//             const newY=Number(clickedValue);
+//             return newY;
+//         })
+// }
+// useEffect(() => {
+//     const fetchData = () => {
+//       switch (type) {
+//         case '+':
+//           return Promise.resolve(x + y);
+//         case '-':
+//           return Promise.resolve(x - y);
+//         case '*':
+//           return Promise.resolve(x * y);
+//         case '/':
+//           return Promise.resolve(x / y);
+//         case '%':
+//           return Promise.resolve(x % y);
+//         default:
+//           return Promise.resolve(0); // Set a default value if type is not recognized
+//       }
+//     };
+  
+//     fetchData()
+//       .then((result) => {
+//         setClickedValue(result);
+//         setExpr(result); // Update expr with the result
+//       })
+//       .catch((error) => {
+//         // Handle errors here
+//       });
+//   }, [y]);
+  
     return(
         <Button onClick={handleButtonClick} variant="contained" style={myStyle} >=</Button>
     )

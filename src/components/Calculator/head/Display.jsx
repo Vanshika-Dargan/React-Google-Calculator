@@ -1,7 +1,7 @@
-export const Display=()=>{
+export const Display=({display})=>{
     return(
         <div>
-            Display
+           {display}
         </div>
     )
 }

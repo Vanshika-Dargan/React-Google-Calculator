@@ -1,4 +1,5 @@
 export const myStyle={
+    width:'100%',
     margin:'4px',
     background:'#f1f3f4',
     color:'#202124',

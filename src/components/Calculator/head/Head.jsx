@@ -1,10 +1,12 @@
 import "./Head.css"
 import {Input} from "./Input/Input";
 import { Display } from "./Display";
-export const Head=({clickedValue})=>{
+import { useState } from "react";
+export const Head=({clickedValue,expr,display})=>{
+    
     return(
     <div id="head">
-        <Display/>
-        <Input clickedValue={clickedValue}/>
+        <Display display={display}/>
+        <Input clickedValue={clickedValue} expr={expr}/>
         </div>);
 }

@@ -1,15 +1,24 @@
-#calc-container{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-}
-
-#calc-head{
-margin:10px;
-}
-
-#calc-body{
-margin:10px;
-}
+#parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+  }
+  
+  #calc-container {
+    width: 500px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #calc-head {
+    margin: 10px;
+  }
+  
+  #calc-body {
+    margin: 10px;
+  }
+  
